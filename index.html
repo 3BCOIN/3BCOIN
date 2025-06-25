@@ -45,7 +45,7 @@
     .banner {
       width: 100%;
       display: block;
-      margin-top: -5px; /* يخلّيها تلتصق بالكفر */
+      margin-top: -5px;
     }
 
     .logo {
@@ -100,6 +100,27 @@
       margin: auto;
       line-height: 1.7;
     }
+
+    .social-links {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .social-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .social-links img {
+      width: 24px;
+      height: 24px;
+    }
   </style>
 </head>
 <body>
@@ -119,8 +140,9 @@
 
     <div class="center-buttons">
       <a href="https://pancakeswap.finance/swap?inputCurrency=BNB&outputCurrency=0x675Ebc604406cBa4F022383717Ed6F0481Cd1E0D&chain=bsc&use=v2" target="_blank">💰 Buy 3BCOIN</a>
+      <a href="https://poocoin.app/tokens/0x675Ebc604406cBa4F022383717Ed6F0481Cd1E0D" target="_blank">📊 Chart</a>
       <a href="#moves">📈 Market Moves</a>
-      <a href="#whitepaper">📄 Whitepaper</a>
+      <a href="whitepaper.pdf" target="_blank">📄 Whitepaper</a>
       <a href="#realestate">🏙 Real Estate</a>
     </div>
   </div>
@@ -132,12 +154,23 @@
 
   <div class="section" id="whitepaper">
     <h2>Whitepaper</h2>
-    <p>Coming soon: full documentation about the 3BCOIN ecosystem, tokenomics, roadmap, and long-term vision.</p>
+    <p>You can read or download the full 3BCOIN whitepaper directly <a href="whitepaper.pdf" target="_blank" style="color: #3b82f6;">from here</a>.</p>
   </div>
 
   <div class="section" id="realestate">
     <h2>Real Estate Backing</h2>
     <p>3BCOIN is backed by real-world real estate assets located in Dubai, offering stability and trust.</p>
+  </div>
+
+  <div class="section social-links">
+    <a href="https://x.com/3bcoin3b?s=21" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/24/733/733579.png" alt="X" />
+      X (Twitter)
+    </a>
+    <a href="https://t.me/coin3b" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/24/2111/2111646.png" alt="Telegram" />
+      Telegram
+    </a>
   </div>
 
   <script>
