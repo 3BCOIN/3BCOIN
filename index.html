@@ -2,182 +2,209 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>3BCOIN - Official Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3BCOIN Official – v2</title>
   <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #0a0a0a;
-      color: white;
-    }
-
-    .language-selector {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      z-index: 999;
-    }
-
-    .language-selector select {
-      padding: 5px 10px;
-      background: #ffffff10;
-      border: 1px solid #ffffff30;
-      border-radius: 5px;
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Orbitron', sans-serif;
       color: #fff;
-      font-size: 14px;
+      background: #000428;
+      overflow-x: hidden;
     }
-
-    .header-wrapper {
-      position: relative;
+    /* خلفية الفيديو */
+    #bg-video {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    /* ناف بار */
+    nav {
+      position: fixed;
       width: 100%;
-    }
-
-    .cover {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .banner {
-      width: 100%;
-      display: block;
-      margin-top: -5px;
-    }
-
-    .logo {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 80px;
-      height: auto;
+      top: 0;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 20, 0.4);
       z-index: 10;
     }
-
-    .center-buttons {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 5;
+    nav .logo img {
+      height: 50px;
+    }
+    nav .links a {
+      margin: 0 15px;
+      color: #81a9f4;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color .3s;
+    }
+    nav .links a:hover {
+      color: #fff;
+    }
+    nav .lang {
+      padding: 6px 10px;
+      border-radius: 5px;
+      border: none;
+      background: #1f2a44;
+      color: #fff;
+    }
+    header {
+      height: 100vh;
       display: flex;
       flex-direction: column;
-      gap: 15px;
-      align-items: center;
-    }
-
-    .center-buttons a {
-      padding: 12px 24px;
-      background: #3b82f6;
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-      border-radius: 6px;
-      transition: background 0.3s;
-    }
-
-    .center-buttons a:hover {
-      background: #2563eb;
-    }
-
-    .section {
-      padding: 40px 20px;
-      text-align: center;
-      background: #111827;
-    }
-
-    .section h2 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    .section p {
-      font-size: 16px;
-      max-width: 800px;
-      margin: auto;
-      line-height: 1.7;
-    }
-
-    .social-links {
-      margin-top: 30px;
-      display: flex;
       justify-content: center;
-      gap: 30px;
-    }
-
-    .social-links a {
-      text-decoration: none;
-      color: white;
-      font-size: 18px;
-      display: flex;
       align-items: center;
-      gap: 8px;
+      text-align: center;
+      padding: 0 20px;
     }
-
-    .social-links img {
-      width: 24px;
-      height: 24px;
+    header h1 {
+      font-size: 4rem;
+      color: #81a9f4;
+      text-shadow: 0 0 10px #81a9f4;
+      margin-bottom: 20px;
+    }
+    header p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      margin: 0 10px 10px;
+      background: linear-gradient(45deg,#0064c8,#4e8cff);
+      border-radius: 30px;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 15px rgba(78,140,255,0.7);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(78,140,255,1);
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .8s ease-out, transform .8s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #81a9f4;
+      text-align: center;
+    }
+    p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #ddd;
+      text-align: center;
+    }
+    .team-members {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .member {
+      background: rgba(30,40,70,0.6);
+      padding: 20px;
+      border-radius: 10px;
+      width: 200px;
+      text-align: center;
+    }
+    .member h4 {
+      margin-bottom: 5px;
+      font-size: 1.2rem;
+    }
+    .member p {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    @media(max-width:768px) {
+      header h1 { font-size: 2.5rem; }
+      .btn { width: 100%; max-width: 300px; }
     }
   </style>
 </head>
 <body>
 
-  <div class="language-selector">
-    <select onchange="changeLanguage(this.value)">
-      <option value="en" selected>🌐 English</option>
-      <option value="ar">🇸🇦 عربي</option>
-      <option value="ru">🇷🇺 Русский</option>
-    </select>
+<video id="bg-video" autoplay muted loop>
+  <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-network-technology-background-2508-large.mp4" type="video/mp4">
+</video>
+
+<nav>
+  <div class="logo"><img src="logo.png" alt="logo"></div>
+  <div class="links">
+    <a href="#about">حول</a>
+    <a href="#roadmap">خريطة الطريق</a>
+    <a href="#team">الفريق</a>
   </div>
+  <select class="lang">
+    <option value="en">EN</option>
+    <option value="ar">AR</option>
+    <option value="ru">RU</option>
+  </select>
+</nav>
 
-  <div class="header-wrapper">
-    <img src="cover.jpg" alt="Cover" class="cover" />
-    <img src="banner.jpg" alt="Banner" class="banner" />
-    <img src="logo.png" alt="3BCOIN Logo" class="logo" />
+<header>
+  <h1>3BCOIN</h1>
+  <p>العملة الرقمية التقنية المستقبلية اللامركزية — تمتع بالقوة والعصرية.</p>
+  <div class="btns">
+    <a class="btn" href="https://poocoin.app/tokens/0xa57Eadda98C56f5EB7609E59e193B4249FD102f7" target="_blank">الشراء</a>
+    <a class="btn" href="https://dexscreener.com/" target="_blank">التحركات</a>
+    <a class="btn" href="whitepaper.pdf" target="_blank">الورقة البيضاء</a>
+  </div>
+</header>
 
-    <div class="center-buttons">
-      <a href="https://pancakeswap.finance/swap?inputCurrency=BNB&outputCurrency=0x675Ebc604406cBa4F022383717Ed6F0481Cd1E0D&chain=bsc&use=v2" target="_blank">💰 Buy 3BCOIN</a>
-      <a href="https://poocoin.app/tokens/0x675Ebc604406cBa4F022383717Ed6F0481Cd1E0D" target="_blank">📊 Chart</a>
-      <a href="#moves">📈 Market Moves</a>
-      <a href="whitepaper.pdf" target="_blank">📄 Whitepaper</a>
-      <a href="#realestate">🏙 Real Estate</a>
+<section id="about">
+  <h2>حول 3BCOIN</h2>
+  <p>3BCOIN عملة رقمية مرتبطة بالتقنية العقارية، تستهدف دمج الاستثمار الذكي مع البلوكشين.</p>
+</section>
+
+<section id="roadmap">
+  <h2>خريطة الطريق</h2>
+  <p>
+    ✔ إطلاق العملة • إدراج في منصات • إطلاق المنصة • شراكات • توسع عالمي
+  </p>
+</section>
+
+<section id="team">
+  <h2>فريق العمل</h2>
+  <div class="team-members">
+    <div class="member">
+      <h4>عبدالباسط محمد يعقوب الإسماعيل</h4>
+      <p>مؤسس المشروع</p>
     </div>
   </div>
+</section>
 
-  <div class="section" id="moves">
-    <h2>Market Moves</h2>
-    <p>Track the latest 3BCOIN trading activity, price charts, and liquidity directly from DEXTools and Poocoin.</p>
-  </div>
-
-  <div class="section" id="whitepaper">
-    <h2>Whitepaper</h2>
-    <p>You can read or download the full 3BCOIN whitepaper directly <a href="whitepaper.pdf" target="_blank" style="color: #3b82f6;">from here</a>.</p>
-  </div>
-
-  <div class="section" id="realestate">
-    <h2>Real Estate Backing</h2>
-    <p>3BCOIN is backed by real-world real estate assets located in Dubai, offering stability and trust.</p>
-  </div>
-
-  <div class="section social-links">
-    <a href="https://x.com/3bcoin3b?s=21" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/24/733/733579.png" alt="X" />
-      X (Twitter)
-    </a>
-    <a href="https://t.me/coin3b" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/24/2111/2111646.png" alt="Telegram" />
-      Telegram
-    </a>
-  </div>
-
-  <script>
-    function changeLanguage(lang) {
-      alert("🛠 Feature coming soon: " + lang + " language support.");
-    }
-  </script>
+<script>
+  // تأثير Scroll Reveal
+  window.addEventListener('scroll', () => {
+    document.querySelectorAll('section').forEach(sec => {
+      if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
+        sec.classList.add('visible');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
