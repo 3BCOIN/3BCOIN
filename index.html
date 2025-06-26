@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>3BCOIN Official – v2</title>
+  <title>3BCOIN Official</title>
   <style>
     body, html {
       margin: 0;
       padding: 0;
       font-family: 'Orbitron', sans-serif;
-      color: #fff;
       background: #000428;
+      color: #fff;
       overflow-x: hidden;
     }
     #bg-video {
@@ -42,8 +42,13 @@
       background: rgba(0, 0, 20, 0.4);
       z-index: 10;
     }
+    nav .logo {
+      flex: 1;
+      text-align: center;
+    }
     nav .logo img {
-      height: 50px;
+      height: 80px;
+      max-width: 200px;
     }
     nav .links a {
       margin: 0 15px;
@@ -57,107 +62,6 @@
       background: #1f2a44;
       color: #fff;
     }
-    header {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 20px;
-    }
-    header h1 {
-      font-size: 4rem;
-      color: #81a9f4;
-      text-shadow: 0 0 10px #81a9f4;
-      margin-bottom: 20px;
-    }
-    header p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      line-height: 1.6;
-      margin-bottom: 30px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      margin: 0 10px 10px;
-      background: linear-gradient(45deg,#0064c8,#4e8cff);
-      border-radius: 30px;
-      color: #fff;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 0 15px rgba(78,140,255,0.7);
-      transition: transform .3s, box-shadow .3s;
-    }
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(78,140,255,1);
-    }
-    section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity .8s ease-out, transform .8s ease-out;
-    }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: #81a9f4;
-      text-align: center;
-    }
-    p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: #ddd;
-      text-align: center;
-    }
-    .team-members {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 30px;
-    }
-    .member {
-      background: rgba(30,40,70,0.6);
-      padding: 20px;
-      border-radius: 10px;
-      width: 260px;
-      text-align: center;
-    }
-    .member h4 {
-      margin-bottom: 5px;
-      font-size: 1.2rem;
-    }
-    .member p {
-      font-size: 0.95rem;
-      color: #aaa;
-    }
-    footer {
-      background:#0a1a2f;
-      padding:40px 20px;
-      text-align:center;
-      color:#aaa;
-    }
-    footer a {
-      color: #4e8cff;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-    @media(max-width:768px) {
-      header h1 { font-size: 2.5rem; }
-      .btn { width: 100%; max-width: 300px; }
-    }
   </style>
 </head>
 <body>
@@ -168,11 +72,15 @@
 <div id="cover"></div>
 
 <nav>
-  <div class="logo"><img src="logo.png" alt="logo"></div>
+  <div class="logo">
+    <img src="logo.png" alt="logo">
+  </div>
   <div class="links">
     <a href="#about">حول</a>
     <a href="#roadmap">خريطة الطريق</a>
     <a href="#team">الفريق</a>
+    <a href="#faq">الأسئلة</a>
+    <a href="#ai">3B AI</a>
   </div>
   <select class="lang">
     <option value="en">EN</option>
@@ -180,59 +88,112 @@
     <option value="ru">RU</option>
   </select>
 </nav>
-
-<header>
-  <h1>3BCOIN</h1>
-  <p>العملة الرقمية التقنية المستقبلية اللامركزية — تمتع بالقوة والعصرية.</p>
-  <div>
-    <a class="btn" href="https://poocoin.app/tokens/0xa57Eadda98C56f5EB7609E59e193B4249FD102f7" target="_blank">الشراء</a>
-    <a class="btn" href="https://dexscreener.com/" target="_blank">التحركات</a>
+<header style="text-align:center; padding-top:180px;">
+  <h1 style="font-size:3rem; color:#4e8cff;">3BCOIN</h1>
+  <p style="max-width:600px; margin:auto; font-size:1.2rem;">
+    العملة الرقمية التقنية المستقبلية المرتبطة بالعقارات في دبي
+  </p>
+  <div style="margin-top:20px;">
+    <a class="btn" href="https://poocoin.app/tokens/0xa57Eadda98C56f5EB7609E59e193B4249FD102f7" target="_blank">شراء</a>
+    <a class="btn" href="https://dexscreener.com" target="_blank">تحركات</a>
     <a class="btn" href="whitepaper.pdf" target="_blank">الورقة البيضاء</a>
   </div>
 </header>
 
-<section class="banner">
-  <img src="panner-dubai.jpg" alt="Dubai Banner" style="width:100%; max-height:600px; display:block;">
+<section style="padding:40px 20px;">
+  <img src="panner-dubai.jpg" alt="Banner" style="width:100%; border-radius:10px;">
 </section>
 
-<section id="about">
-  <h2>حول 3BCOIN</h2>
-  <p>3BCOIN عملة رقمية مرتبطة بالتقنية العقارية، تستهدف دمج الاستثمار الذكي مع البلوكشين.</p>
+<section style="text-align:center; padding:30px;">
+  <a class="btn" href="https://t.me/coin3b" target="_blank" style="font-size:18px;">🎯 انضم إلى المجتمع</a>
 </section>
 
-<section id="roadmap">
-  <h2>خريطة الطريق</h2>
-  <p>✔ إطلاق العملة • إدراج في منصات • إطلاق المنصة • شراكات • توسع عالمي</p>
-</section>
-
-<section id="team">
-  <h2>معلومات المشروع</h2>
-  <div class="team-members">
-    <div class="member">
-      <h4>المقر الرسمي</h4>
-      <p>دبي، الإمارات العربية المتحدة</p>
+<section style="text-align:center; padding:60px 20px;">
+  <h2>📊 إحصائيات مباشرة</h2>
+  <div id="stats" style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
+    <div style="background:#1c2c4f; padding:20px; border-radius:10px;">
+      <h3>👤 عدد الحاملين</h3>
+      <p id="holders">جارٍ التحميل...</p>
+    </div>
+    <div style="background:#1c2c4f; padding:20px; border-radius:10px;">
+      <h3>🔥 التوكنات المحروقة</h3>
+      <p id="burned">جارٍ التحميل...</p>
     </div>
   </div>
 </section>
 
-<footer>
+<section style="text-align:center; padding:60px 20px;">
+  <h2>🌍 توزيع العملة</h2>
+  <canvas id="pieChart" width="300" height="300" style="margin:auto;"></canvas>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // Pie chart
+  const ctx = document.getElementById('pieChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Airdrop 20%', 'Marketing 15%', 'Founder 25%', 'Liquidity 20%', 'Burn 20%'],
+      datasets: [{
+        label: 'Token Distribution',
+        data: [20, 15, 25, 20, 20],
+        backgroundColor: ['#4e8cff', '#ff4e4e', '#4effb1', '#ffa64e', '#aaa']
+      }]
+    }
+  });
+
+  // Placeholder for live stats (can be replaced by real API later)
+  document.getElementById("holders").innerText = "3,214";
+  document.getElementById("burned").innerText = "18,200,000,000";
+</script>
+<section id="faq" style="padding:60px 20px; background:#0a1a2f;">
+  <h2>❓ الأسئلة الشائعة</h2>
+  <details style="margin:10px 0;"><summary>ما هي 3BCOIN؟</summary><p>عملة رقمية مبتكرة مدعومة بالتقنية والعقارات.</p></details>
+  <details style="margin:10px 0;"><summary>أين يمكنني شراء 3BCOIN؟</summary><p>من خلال PancakeSwap أو عبر رابط الشراء في الموقع.</p></details>
+  <details style="margin:10px 0;"><summary>هل 3BCOIN لامركزية؟</summary><p>نعم، تعتمد على عقود ذكية بدون صلاحية تحكم بعد الإطلاق.</p></details>
+</section>
+
+<section id="ai" style="padding:60px 20px;">
+  <h2>🧠 3B AI – ذكاء العملة</h2>
+  <p>الذكاء الاصطناعي في 3BCOIN يساعد على التوسع الذكي، تحليل الفرص، مراقبة السوق، والتفاعل الذاتي مع التداولات.</p>
+</section>
+
+<section style="padding:60px 20px; background:#111b30;">
+  <h2>💬 تقييمات المستخدمين</h2>
+  <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+    <div style="background:#1e2d4a; padding:20px; border-radius:10px; width:260px;">
+      <p>"أفضل مشروع دخلته بحياتي، 3BCOIN للمستقبل!"</p><hr><strong>أحمد – دبي</strong>
+    </div>
+    <div style="background:#1e2d4a; padding:20px; border-radius:10px; width:260px;">
+      <p>"تصميم الموقع 🔥 وعملة قوية وعقارية 👏"</p><hr><strong>سارة – السعودية</strong>
+    </div>
+  </div>
+</section>
+
+<section style="padding:60px 20px;">
+  <h2>📈 سعر العملة (مباشر)</h2>
+  <iframe src="https://dexscreener.com/bsc/0xa57Eadda98C56f5EB7609E59e193B4249FD102f7" style="width:100%; height:500px; border:none;"></iframe>
+</section>
+
+<section style="padding:60px 20px; background:#0f1b2f;">
+  <h2>📩 تواصل معنا</h2>
+  <form action="mailto:3bcoin3b@gmail.com" method="POST" enctype="text/plain" style="max-width:500px; margin:auto;">
+    <input type="text" name="name" placeholder="اسمك" required style="width:100%; padding:10px; margin:10px 0; border-radius:6px;">
+    <input type="email" name="email" placeholder="بريدك" required style="width:100%; padding:10px; margin:10px 0; border-radius:6px;">
+    <textarea name="message" placeholder="رسالتك" rows="5" style="width:100%; padding:10px; margin:10px 0; border-radius:6px;"></textarea>
+    <button type="submit" style="padding:12px 24px; background:#4e8cff; border:none; border-radius:6px; color:white;">إرسال</button>
+  </form>
+</section>
+
+<footer style="background:#0a1a2f; padding:40px 20px; text-align:center; color:#aaa;">
   <p>© 2025 3BCOIN – All rights reserved.</p>
   <div style="margin-top:10px;">
-    <a href="https://t.me/ThreeBCoin" target="_blank">📢 Telegram</a> |
-    <a href="https://twitter.com/3" target="_blank">🐦 X / Twitter</a> |
+    <a href="https://t.me/coin3b" target="_blank">📢 Telegram</a> |
+    <a href="https://x.com/3bcoin3b?s=21" target="_blank">🐦 X / Twitter</a> |
     <a href="mailto:3bcoin3b@gmail.com">📧 Contact Us</a>
   </div>
 </footer>
-
-<script>
-  window.addEventListener('scroll', () => {
-    document.querySelectorAll('section').forEach(sec => {
-      if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
-        sec.classList.add('visible');
-      }
-    });
-  });
-</script>
 
 </body>
 </html>
