@@ -13,15 +13,23 @@
       background: #000428;
       overflow-x: hidden;
     }
-    /* خلفية الفيديو */
     #bg-video {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
       object-fit: cover;
+      z-index: -2;
+    }
+    #cover {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('cover-future.jpg') center/cover no-repeat;
+      opacity: 0.2;
       z-index: -1;
     }
-    /* ناف بار */
     nav {
       position: fixed;
       width: 100%;
@@ -42,15 +50,10 @@
       color: #81a9f4;
       text-decoration: none;
       font-size: 16px;
-      transition: color .3s;
-    }
-    nav .links a:hover {
-      color: #fff;
     }
     nav .lang {
       padding: 6px 10px;
       border-radius: 5px;
-      border: none;
       background: #1f2a44;
       color: #fff;
     }
@@ -126,7 +129,7 @@
       background: rgba(30,40,70,0.6);
       padding: 20px;
       border-radius: 10px;
-      width: 200px;
+      width: 260px;
       text-align: center;
     }
     .member h4 {
@@ -134,8 +137,22 @@
       font-size: 1.2rem;
     }
     .member p {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: #aaa;
+    }
+    footer {
+      background:#0a1a2f;
+      padding:40px 20px;
+      text-align:center;
+      color:#aaa;
+    }
+    footer a {
+      color: #4e8cff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
     @media(max-width:768px) {
       header h1 { font-size: 2.5rem; }
@@ -148,6 +165,7 @@
 <video id="bg-video" autoplay muted loop>
   <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-network-technology-background-2508-large.mp4" type="video/mp4">
 </video>
+<div id="cover"></div>
 
 <nav>
   <div class="logo"><img src="logo.png" alt="logo"></div>
@@ -166,12 +184,16 @@
 <header>
   <h1>3BCOIN</h1>
   <p>العملة الرقمية التقنية المستقبلية اللامركزية — تمتع بالقوة والعصرية.</p>
-  <div class="btns">
+  <div>
     <a class="btn" href="https://poocoin.app/tokens/0xa57Eadda98C56f5EB7609E59e193B4249FD102f7" target="_blank">الشراء</a>
     <a class="btn" href="https://dexscreener.com/" target="_blank">التحركات</a>
     <a class="btn" href="whitepaper.pdf" target="_blank">الورقة البيضاء</a>
   </div>
 </header>
+
+<section class="banner">
+  <img src="panner-dubai.jpg" alt="Dubai Banner" style="width:100%; max-height:600px; display:block;">
+</section>
 
 <section id="about">
   <h2>حول 3BCOIN</h2>
@@ -180,23 +202,29 @@
 
 <section id="roadmap">
   <h2>خريطة الطريق</h2>
-  <p>
-    ✔ إطلاق العملة • إدراج في منصات • إطلاق المنصة • شراكات • توسع عالمي
-  </p>
+  <p>✔ إطلاق العملة • إدراج في منصات • إطلاق المنصة • شراكات • توسع عالمي</p>
 </section>
 
 <section id="team">
-  <h2>فريق العمل</h2>
+  <h2>معلومات المشروع</h2>
   <div class="team-members">
     <div class="member">
-      <h4>عبدالباسط محمد يعقوب الإسماعيل</h4>
-      <p>مؤسس المشروع</p>
+      <h4>المقر الرسمي</h4>
+      <p>دبي، الإمارات العربية المتحدة</p>
     </div>
   </div>
 </section>
 
+<footer>
+  <p>© 2025 3BCOIN – All rights reserved.</p>
+  <div style="margin-top:10px;">
+    <a href="https://t.me/ThreeBCoin" target="_blank">📢 Telegram</a> |
+    <a href="https://twitter.com/3" target="_blank">🐦 X / Twitter</a> |
+    <a href="mailto:3bcoin3b@gmail.com">📧 Contact Us</a>
+  </div>
+</footer>
+
 <script>
-  // تأثير Scroll Reveal
   window.addEventListener('scroll', () => {
     document.querySelectorAll('section').forEach(sec => {
       if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
